@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -shared -Wl,-soname,liblinuxdeploy_desktopfile.so -o liblinuxdeploy_desktopfile.so CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfile.cpp.o CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfileentry.cpp.o CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfilereader.cpp.o CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfilewriter.cpp.o

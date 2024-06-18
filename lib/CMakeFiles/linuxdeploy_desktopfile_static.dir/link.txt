@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblinuxdeploy_desktopfile_static.a CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfile.cpp.o CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfileentry.cpp.o CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfilereader.cpp.o CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfilewriter.cpp.o
+/usr/bin/ranlib liblinuxdeploy_desktopfile_static.a
