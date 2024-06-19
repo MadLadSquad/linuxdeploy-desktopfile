@@ -136,14 +136,11 @@ lib/CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfile.cpp.o: \
  /usr/include/c++/14.1.1/bits/fstream.tcc \
  /home/nick/linuxdeploy-desktopfile/include/linuxdeploy/desktopfile/exceptions.h \
  /home/nick/linuxdeploy-desktopfile/include/linuxdeploy/desktopfile/desktopfile.h \
- /usr/include/c++/14.1.1/unordered_map \
- /usr/include/c++/14.1.1/bits/unordered_map.h \
- /usr/include/c++/14.1.1/bits/hashtable.h \
- /usr/include/c++/14.1.1/bits/hashtable_policy.h \
- /usr/include/c++/14.1.1/tuple \
- /usr/include/c++/14.1.1/bits/uses_allocator.h \
+ /usr/include/c++/14.1.1/map /usr/include/c++/14.1.1/bits/stl_tree.h \
  /usr/include/c++/14.1.1/ext/aligned_buffer.h \
- /usr/include/c++/14.1.1/bits/enable_special_members.h \
+ /usr/include/c++/14.1.1/bits/stl_map.h /usr/include/c++/14.1.1/tuple \
+ /usr/include/c++/14.1.1/bits/uses_allocator.h \
+ /usr/include/c++/14.1.1/bits/stl_multimap.h \
  /usr/include/c++/14.1.1/bits/erase_if.h \
  /home/nick/linuxdeploy-desktopfile/include/linuxdeploy/desktopfile/desktopfileentry.h \
  /usr/include/c++/14.1.1/memory \

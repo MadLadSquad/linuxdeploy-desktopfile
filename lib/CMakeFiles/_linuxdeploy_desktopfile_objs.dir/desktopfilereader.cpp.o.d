@@ -168,6 +168,9 @@ lib/CMakeFiles/_linuxdeploy_desktopfile_objs.dir/desktopfilereader.cpp.o: \
  /home/nick/linuxdeploy-desktopfile/include/linuxdeploy/desktopfile/exceptions.h \
  /home/nick/linuxdeploy-desktopfile/lib/desktopfilereader.h \
  /home/nick/linuxdeploy-desktopfile/include/linuxdeploy/desktopfile/desktopfile.h \
+ /usr/include/c++/14.1.1/map /usr/include/c++/14.1.1/bits/stl_tree.h \
+ /usr/include/c++/14.1.1/bits/stl_map.h \
+ /usr/include/c++/14.1.1/bits/stl_multimap.h \
  /home/nick/linuxdeploy-desktopfile/lib/util.h \
  /usr/include/c++/14.1.1/algorithm \
  /usr/include/c++/14.1.1/bits/stl_algo.h \

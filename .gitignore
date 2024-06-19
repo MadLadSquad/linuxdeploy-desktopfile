@@ -1,6 +1,3 @@
-cmake-build-*/
-*build*/
-.idea/
-squashfs-root/
-*.AppImage
-*.*swp
+CMakeCache.txt
+**/CmakeFiles/
+Makefile

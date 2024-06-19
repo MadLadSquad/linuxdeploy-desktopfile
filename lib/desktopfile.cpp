@@ -32,89 +32,89 @@ namespace linuxdeploy {
         DesktopFile::DesktopFile() : d(std::make_shared<PrivateData>()) {}
 
         DesktopFile::DesktopFile(const std::string& path) : DesktopFile() {
-            // if the file doesn't exist, an exception shall be thrown
-            // otherwise, a user cannot know for sure whether a file was actually read (would need to check this
-            // manually beforehand
-            {
-                std::ifstream ifs(path);
-                if (!ifs) {
-                    throw IOError("Could not find file " + path);
-                }
+        // if the file doesn't exist, an exception shall be thrown
+        // otherwise, a user cannot know for sure whether a file was actually read (would need to check this
+        // manually beforehand
+        {
+            std::ifstream ifs(path);
+            if (!ifs) {
+                throw IOError("Could not find file " + path);
             }
+        }
 
-            // will throw exceptions in case of issues
-            read(path);
-        };
+        // will throw exceptions in case of issues
+        read(path);
+    };
 
-        DesktopFile::DesktopFile(std::istream& is) : DesktopFile() {
-            // will throw exceptions in case of issues
-            read(is);
-        };
+    DesktopFile::DesktopFile(std::istream& is) : DesktopFile() {
+        // will throw exceptions in case of issues
+        read(is);
+    };
 
-        // copy constructor
-        DesktopFile::DesktopFile(const DesktopFile& other) : DesktopFile() {
+    // copy constructor
+    DesktopFile::DesktopFile(const DesktopFile& other) : DesktopFile() {
+        d->copyData(other.d);
+    }
+
+    // copy assignment constructor
+    DesktopFile& DesktopFile::operator=(const DesktopFile& other) {
+        if (this != &other) {
             d->copyData(other.d);
         }
 
-        // copy assignment constructor
-        DesktopFile& DesktopFile::operator=(const DesktopFile& other) {
-            if (this != &other) {
-                d->copyData(other.d);
-            }
+        return *this;
+    }
 
-            return *this;
+    // move assignment operator
+    DesktopFile& DesktopFile::operator=(DesktopFile&& other) noexcept {
+        if (this != &other) {
+            d = other.d;
+            other.d = nullptr;
         }
+        return *this;
+    }
 
-        // move assignment operator
-        DesktopFile& DesktopFile::operator=(DesktopFile&& other) noexcept {
-            if (this != &other) {
-                d = other.d;
-                other.d = nullptr;
-            }
-            return *this;
-        }
+    void DesktopFile::read(const std::string& path) {
+        setPath(path);
 
-        void DesktopFile::read(const std::string& path) {
-            setPath(path);
+        // clear data before reading a new file
+        clear();
 
-            // clear data before reading a new file
-            clear();
+        DesktopFileReader reader(path);
+        d->data = std::move(reader.data());
+    }
 
-            DesktopFileReader reader(path);
-            d->data = std::move(reader.data());
-        }
+    void DesktopFile::read(std::istream& is) {
+        // clear data before reading a new file
+        clear();
 
-        void DesktopFile::read(std::istream& is) {
-            // clear data before reading a new file
-            clear();
+        DesktopFileReader reader(is);
+        d->data = reader.data();
+    }
 
-            DesktopFileReader reader(is);
-            d->data = reader.data();
-        }
+    std::string DesktopFile::path() const {
+        return d->path;
+    }
 
-        std::string DesktopFile::path() const {
-            return d->path;
-        }
+    void DesktopFile::setPath(const std::string& path) {
+        d->path = path;
+    }
 
-        void DesktopFile::setPath(const std::string& path) {
-            d->path = path;
-        }
+    bool DesktopFile::isEmpty() const {
+        return d->isEmpty();
+    }
 
-        bool DesktopFile::isEmpty() const {
-            return d->isEmpty();
-        }
+    void DesktopFile::clear() {
+        d->data.clear();
+    }
 
-        void DesktopFile::clear() {
-            d->data.clear();
-        }
+    bool DesktopFile::save() const {
+        return save(d->path);
+    }
 
-        bool DesktopFile::save() const {
-            return save(d->path);
-        }
-
-        bool DesktopFile::save(const std::string& path) const {
-            DesktopFileWriter writer(d->data);
-            writer.save(path);
+    bool DesktopFile::save(const std::string& path) const {
+        DesktopFileWriter writer(d->data);
+        writer.save(path);
 
             return true;
         }
@@ -169,6 +169,10 @@ namespace linuxdeploy {
             return true;
         }
 
+        const DesktopFile::sections_t& DesktopFile::getMap() {
+            return d->data;
+        }
+
         bool operator==(const DesktopFile& first, const DesktopFile& second) {
             return first.d->path == second.d->path && first.d->data == second.d->data;
         }
@@ -178,6 +182,3 @@ namespace linuxdeploy {
         }
     }
 }
-
-
-

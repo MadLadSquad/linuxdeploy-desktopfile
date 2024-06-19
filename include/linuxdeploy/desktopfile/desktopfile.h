@@ -27,7 +27,6 @@ namespace linuxdeploy {
                 // (in)equality operators are implemented outside this class
                 friend bool operator==(const DesktopFile& first, const DesktopFile& second);
                 friend bool operator!=(const DesktopFile& first, const DesktopFile& second);
-
             public:
                 // default constructor
                 DesktopFile();
@@ -106,6 +105,9 @@ namespace linuxdeploy {
 
                 // validate desktop file
                 bool validate() const;
+
+                // Get sections sorted in insertion order.
+                const DesktopFile::sections_t& getMap();
         };
 
         // DesktopFile equality operator
@@ -113,5 +115,6 @@ namespace linuxdeploy {
 
         // DesktopFile inequality operator
         bool operator!=(const DesktopFile& first, const DesktopFile& second);
+
     }
 }
