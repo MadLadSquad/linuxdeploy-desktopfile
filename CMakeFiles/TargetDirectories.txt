@@ -1,0 +1,7 @@
+/home/nick/linuxdeploy-desktopfile/CMakeFiles/edit_cache.dir
+/home/nick/linuxdeploy-desktopfile/CMakeFiles/rebuild_cache.dir
+/home/nick/linuxdeploy-desktopfile/lib/CMakeFiles/_linuxdeploy_desktopfile_objs.dir
+/home/nick/linuxdeploy-desktopfile/lib/CMakeFiles/linuxdeploy_desktopfile.dir
+/home/nick/linuxdeploy-desktopfile/lib/CMakeFiles/linuxdeploy_desktopfile_static.dir
+/home/nick/linuxdeploy-desktopfile/lib/CMakeFiles/edit_cache.dir
+/home/nick/linuxdeploy-desktopfile/lib/CMakeFiles/rebuild_cache.dir
